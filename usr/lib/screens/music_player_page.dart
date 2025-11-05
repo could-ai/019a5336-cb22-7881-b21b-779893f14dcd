@@ -54,8 +54,8 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
     if (isPlaying) {
       await audioPlayer.pause();
     } else {
-      // In a real app, audio routing to multiple Bluetooth devices requires platform support
-      await audioPlayer.play(UrlSource(audioUrl));
+      // Play audio from URL. For audioplayers v0.20.1, use play(String url).
+      await audioPlayer.play(audioUrl);
     }
     setState(() {
       isPlaying = !isPlaying;
